@@ -1,0 +1,42 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand">{{ title }}</a>
+    <div
+      class="navbar-nav mr-auto"
+      routerLinkActive="active"
+      *ngIf="username && !isAdmin()"
+    >
+      <div class="nav-item">
+        <a class="nav-link" routerLink="/rooms/available">Комнаты</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link" routerLink="/rooms/my">Мои комнаты</a>
+      </div>
+    </div>
+    <div class="navbar-nav mr-auto" routerLinkActive="active" *ngIf="isAdmin()">
+      <div class="nav-item">
+        <a class="nav-link" routerLink="/admin/loans-approve">Контент</a>
+      </div>
+    </div>
+
+    <div class="navbar-nav ml-auto">
+      <div class="nav-item" *ngIf="!username && router.url !== '/signup'">
+        <a href="/signup" class="nav-link" routerLink="signup">Регистрация</a>
+      </div>
+      <div class="nav-item" *ngIf="!username && router.url !== '/login'">
+        <a href="/login" class="nav-link" routerLink="login">Вход</a>
+      </div>
+    </div>
+
+    <div class="navbar-nav ml-auto" *ngIf="username">
+      <div class="nav-item">
+        <a class="nav-link">{{ username }}</a>
+      </div>
+      <div class="nav-item">
+        <a href class="nav-link" (click)="logout()">Выйти</a>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <p></p>
+
+  <h3>Список доступных комнат</h3>
+
+  <div class="row">
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Название</th>
+          <th scope="col">Создатель</th>
+          <th scope="col">Фильм</th>
+          <th scope="col">Кол-во участников</th>
+          <th scope="col" class="text-right"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of rooms">
+          <td>{{ room.title }}</td>
+          <td>{{ room.owner }}</td>
+          <td>
+            {{ room.movieTitle }}
+          </td>
+          <td>
+            {{ room.participantsCount }}
+          </td>
+          <td class="text-center text-right">
+            <button
+              class="btn btn-success btn-sm m-2 refund-button"
+              (click)="enterRoom(room.id)"
+            >
+              Войти
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

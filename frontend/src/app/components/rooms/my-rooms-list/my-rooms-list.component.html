@@ -1,0 +1,43 @@
+<div class="container">
+  <p></p>
+
+  <h3>Список моих комнат</h3>
+
+  <div class="row">
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th scope="col">Название</th>
+          <th scope="col">Фильм</th>
+          <th scope="col">Кол-во участников</th>
+          <th scope="col" class="text-right">
+            <a class="btn btn-success" routerLink="/rooms/create">
+              + Создать комнату
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of rooms">
+          <td>{{ room.title }}</td>
+          <td>{{ room.movieTitle }}</td>
+          <td>
+            {{ room.participants.length }}
+          </td>
+
+          <td class="text-right">
+            <a class="btn btn-info btn-sm m-2" (click)="addParticipant(room)"
+              >Добавить участника</a
+            >
+            <a class="btn btn-warning btn-sm m-2" (click)="open(room)"
+              >Войти</a
+            >
+            <a class="btn btn-danger btn-sm m-2" (click)="delete(room)"
+              >Удалить</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

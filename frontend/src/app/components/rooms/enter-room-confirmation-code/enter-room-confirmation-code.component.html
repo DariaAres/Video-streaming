@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>{{ room?.title ?? "unknown" }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="code">Код</label>
+          <input
+            type="text"
+            class="form-control"
+            name="code"
+            [(ngModel)]="form.code"
+            placeholder="xxxx-xxxx"
+          />
+          <div class="alert alert-danger" *ngIf="errorData.code && f.submitted">
+            <div *ngIf="errorData.code">{{ errorData.name }}</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Вход</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

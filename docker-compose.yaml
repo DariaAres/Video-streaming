@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  videostreaming:
+    image: videostreaming:latest
+    restart: on-failure
+    depends_on:
+      - "postgres"
+    build:
+      context: ./backend/VideoStreaming/VideoStreaming
+    ports:
+      - "55000:80"
+    environment:
+      ConnectionStrings__Default: "Host=postgres;Database=BankAndStock;Username=postgres;Password=qwerty123"
+      ASPNETCORE_ENVIRONMENT: Development
+    
+  postgres:
+    image: postgres:latest
+    ports:
+      - "55432:5432"
+    restart: always
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: "qwerty123"
+      
+  frontend:
+    image: videostreaming-frontend:latest
+    restart: on-failure
+    build:
+      context: ./frontend
+    ports:
+      - 8080:80
+
+volumes:
+  azurite-data:

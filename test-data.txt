@@ -1,0 +1,29 @@
+sign in:
+{
+  "userName": "ivan",
+  "password": "Pa$$w0rd"
+}
+
+admin: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmZWJlZmNlNi1hNGZmLTRlNDEtOWY2MC04ZTRjZmVkYzdkYTciLCJuYW1lIjoiYWRtaW4iLCJyb2xlcyI6IkFkbWluIiwibmJmIjoxNjg2NzAwOTYyLCJleHAiOjE2ODczMDU3NjIsImlhdCI6MTY4NjcwMDk2Mn0.KLPihBLBDqcuraWhjzWf_YeZoay5MQKUftZnPeEGdd9xpcbRww9kEmpsSWLqLDyl_A7aM7vJCJN7vfLR-eAHpA
+ivan: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhZTcwZjZjMC1iY2I5LTQxZjktOGExZS05OTE5ZDk3YzI0OTEiLCJuYW1lIjoiaXZhbiIsInJvbGVzIjoiVXNlciIsIm5iZiI6MTY4NjY0NzMyNSwiZXhwIjoxNjg3MjUyMTI1LCJpYXQiOjE2ODY2NDczMjV9.aM26WTDQu3_ZBSOqOymEV5wPmiWkhrCNW3pG3SgIkgN0b_XKbD6zPVBGavRoUyUHH8hG1FOA0v9V6NY60ebZzQ
+test1: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI3ZTQzYmFmOS0zNzU1LTQxNDgtYmU4YS1kZjA0ZTQyYjAwZDkiLCJuYW1lIjoidGVzdDEiLCJyb2xlcyI6IlVzZXIiLCJuYmYiOjE2ODY2NDc0MTIsImV4cCI6MTY4NzI1MjIxMiwiaWF0IjoxNjg2NjQ3NDEyfQ.KzLOkb5rFax-RCmOYSwU3sHXtkkhakxVKTWJGPyI1GBx7_Q6X6uFdkEUqj1UXVGVm5A5Y_eUUc2DHub9g1TaUQ
+
+sign up:
+{
+  "name": "Test",
+  "surname": "Test1",
+  "email": "test1@test.com",
+  "username": "test1",
+  "password": "Pa$$w0rd"
+}
+
+create room:
+{
+  "title": "Test Room Without Content",
+  "participantEmails": [
+    "test1@test.com",
+    "test2@test.com",
+    "test3@test.com",
+    "test4@test.com"
+  ]
+}

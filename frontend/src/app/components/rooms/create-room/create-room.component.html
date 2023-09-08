@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3>Создать комнату</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="title">Название</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            [(ngModel)]="form.title"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="errorData.title && f.submitted"
+          >
+            <div *ngIf="errorData.title">{{ errorData.title }}</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fileId">Фильм</label>
+          <select
+            class="form-control"
+            [(ngModel)]="form.fileId"
+            name="currencySelecy"
+          >
+            <option disabled>Выберите фильм</option>
+            <option *ngFor="let file of files" [ngValue]="file.fileId">
+              {{ file.fileName }}
+            </option>
+          </select>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="errorData.fileId && f.submitted"
+          >
+            <div>{{ errorData.fileId }}</div>
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="participantEmails">Почта</label>
+          <input
+            type="email"
+            class="form-control"
+            name="participantEmails"
+            [(ngModel)]="form.participantEmails"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="errorData.participantEmails && f.submitted"
+          >
+            <div *ngIf="errorData.participantEmails">
+              {{ errorData.participantEmails }}
+            </div>
+          </div>
+        </div> -->
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">Создать</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
